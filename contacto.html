@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CECATI 97 - Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="imagenes/placeholder-square.jpg" alt="CECATI 97 logo">
+                <span>CECATI 97</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="registro.html">Registro</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li class="dropdown">
+                        <a href="#">Soporte</a>
+                        <div class="dropdown-content">
+                            <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                            <a href="contacto.html">Contacto</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section style="background-color: white; padding: 30px; border-radius: 8px;">
+            <h2>Contacto</h2>
+            <p><strong>Dirección:</strong> Av. Principal #123, Tonalá, Jalisco, México</p>
+            <p><strong>Teléfono:</strong> (33) 1234 5678</p>
+            <p><strong>Correo:</strong> info@cecati97.edu.mx</p>
+            <p><strong>Horario de atención:</strong> Lunes a Viernes de 8:00 a 18:00 hrs</p>
+
+            <h3>Formulario de contacto</h3>
+            <form id="form-contacto" style="max-width: 600px;">
+                <div class="grupo-formulario">
+                    <label for="contacto-nombre">Nombre</label>
+                    <input type="text" id="contacto-nombre" name="nombre" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="contacto-email">Correo electrónico</label>
+                    <input type="email" id="contacto-email" name="email" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="contacto-mensaje">Mensaje</label>
+                    <textarea id="contacto-mensaje" name="mensaje" rows="5" style="width:100%; padding:10px; border:2px solid #e0e0e0; border-radius:4px;" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CECATI 97 - Tonalá, Jalisco</p>
+    </footer>
+
+    <script>
+        // Manejo básico del formulario de contacto (solo simulación)
+        document.getElementById('form-contacto')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensaje enviado. Nos pondremos en contacto pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

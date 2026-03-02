@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CECATI 97 - Registro</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="imagenes/logo-cecati.png" alt="CECATI 97 logo">
+                <span>CECATI 97</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="registro.html">Registro</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li class="dropdown">
+                        <a href="#">Soporte</a>
+                        <div class="dropdown-content">
+                            <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                            <a href="contacto.html">Contacto</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="registro-contenedor">
+            <section class="requisitos">
+                <h2>Requisitos de inscripción</h2>
+                <ul>
+                    <li>Ser mayor de 15 años</li>
+                    <li>Copia de acta de nacimiento</li>
+                    <li>Identificación oficial (INE, pasaporte, cédula)</li>
+                    <li>Comprobante de domicilio reciente</li>
+                    <li>2 fotografías tamaño infantil</li>
+                    <li>Cubrir cuota de inscripción</li>
+                </ul>
+                <p><strong>Nota:</strong> Los documentos se entregarán el primer día de clases.</p>
+            </section>
+
+            <section class="formulario-registro">
+                <h2>Formulario de registro</h2>
+                <form id="form-registro" class="formulario-curso" novalidate>
+                    <fieldset>
+                        <legend>Datos personales</legend>
+
+                        <div class="grupo-formulario">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required
+                                   placeholder="Ej. Juan Pérez López"
+                                   data-patron="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"
+                                   data-mensaje-validacion="El nombre solo debe contener letras y espacios">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required
+                                   placeholder="ejemplo@correo.com"
+                                   data-patron="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                                   data-mensaje-validacion="Ingrese un correo electrónico válido">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required
+                                   placeholder="3312345678"
+                                   data-patron="^\d{10}$"
+                                   data-mensaje-validacion="Ingrese 10 dígitos sin espacios ni guiones">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="fecha_nacimiento">Fecha de nacimiento *</label>
+                            <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" required
+                                   placeholder="DD/MM/AAAA"
+                                   maxlength="10"
+                                   pattern="\d{2}/\d{2}/\d{4}">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Selección del curso</legend>
+
+                        <div class="grupo-formulario">
+                            <label for="curso">Curso *</label>
+                            <select id="curso" name="curso" required>
+                                <option value="">Seleccione un curso</option>
+                                <!-- Las opciones se agregarán con JavaScript -->
+                            </select>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="nivel">Nivel *</label>
+                            <select id="nivel" name="nivel" required>
+                                <option value="">Seleccione un nivel</option>
+                                <option value="introduccion">Introducción (Sin experiencia)</option>
+                                <option value="principiante">Principiante (Conocimientos básicos)</option>
+                                <option value="avanzado">Avanzado (Experiencia previa)</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="horario">Horario preferente *</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Seleccione un horario</option>
+                                <option value="matutino">Matutino (8:00 - 12:00 hrs)</option>
+                                <option value="vespertino">Vespertino (14:00 - 18:00 hrs)</option>
+                                <option value="sabatino">Sabatino (9:00 - 13:00 hrs)</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit">Registrarse</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 CECATI 97 - Tonalá, Jalisco</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Pre-seleccionar curso si viene por URL (ej. desde cursos.html)
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cursoParam = urlParams.get('curso');
+            if (cursoParam) {
+                const selectCurso = document.getElementById('curso');
+                // Esperar a que las opciones se carguen (el script las agrega)
+                setTimeout(() => {
+                    for (let option of selectCurso.options) {
+                        if (option.value === cursoParam) {
+                            option.selected = true;
+                            break;
+                        }
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

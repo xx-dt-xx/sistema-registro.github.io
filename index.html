@@ -1,32 +1,139 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>CECATI 97 - Inicio</title>
-	<link rel="stylesheet" href="css/estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CECATI 97 - Inicio</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-	<header>
-		<h1>CECATI 97</h1>
-		<p>Centro de Capacitación para el Trabajo Industrial</p>
-	</header>
+    <header>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="imagenes/logo-cecati.png" alt="CECATI 97 logo">
+                <span>CECATI 97</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="registro.html">Registro</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li class="dropdown">
+                        <a href="#">Soporte</a>
+                        <div class="dropdown-content">
+                            <a href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                            <a href="contacto.html">Contacto</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-	<nav aria-label="Cursos principales">
-		<ul>
-			<li><a href="#electricidad">Electricidad</a></li>
-			<li><a href="#carpinteria">Carpintería</a></li>
-			<li><a href="#corte">Corte y confección</a></li>
-		</ul>
-	</nav>
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Capacitación Industrial de Calidad</h1>
+                <p>En CECATI 97 formamos profesionales técnicos con las habilidades que la industria necesita. Cursos prácticos, instructores expertos y certificación oficial.</p>
+                <div class="hero-buttons">
+                    <a href="cursos.html" class="btn">Conoce nuestros cursos</a>
+                </div>
+            </div>
+            <div class="hero-image">
+            </div>
+        </section>
 
-	<main id="contenedor-cursos">
-		<!-- Los cursos se generarán dinámicamente con JavaScript -->
-	</main>
+        <!-- Cursos Destacados (cards) -->
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #0055a5; font-size: 2.5rem;">Cursos Destacados</h2>
+            <p style="color: #666; max-width: 700px; margin: 0 auto 30px;">Selección de los cursos más solicitados por nuestros estudiantes</p>
+            <div class="cursos-grid">
+                <div class="curso-card">
+                    <img src="https://picsum.photos/id/179/400/250" alt="Electricidad">
+                    <h3>Electricidad</h3>
+                    <p>Aprende instalaciones eléctricas de baja tensión, motores y control industrial. Prácticas en taller equipado.</p>
+                    <p><strong>Duración:</strong> 3 meses</p>
+                    <a href="registro.html?curso=Electricidad%20Industrial" class="btn">Inscribirme</a>
+                </div>
+                <div class="curso-card">
+                    <img src="https://picsum.photos/id/126/400/250" alt="Carpintería">
+                    <h3>Carpintería</h3>
+                    <p>Domina la madera: diseño, construcción y acabados profesionales para muebles personalizados.</p>
+                    <p><strong>Duración:</strong> 4 meses</p>
+                    <a href="registro.html?curso=Carpintería%20de%20Muebles%20Finos" class="btn">Inscribirme</a>
+                </div>
+                <div class="curso-card">
+                    <img src="https://picsum.photos/id/42/400/250" alt="Corte y Confección">
+                    <h3>Corte y Confección</h3>
+                    <p>Técnicas de patronaje, corte y costura industrial. Manejo de maquinaria especializada y producción en serie.</p>
+                    <p><strong>Duración:</strong> 3 meses</p>
+                    <a href="registro.html?curso=Corte%20y%20Confección%20Industrial" class="btn">Inscribirme</a>
+                </div>
+            </div>
+        </section>
 
-	<footer>
-		<p>© 2026 CECATI 97 - Tonalá, Jalisco</p>
-	</footer>
+        <!-- Características / Beneficios -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="icono">⚡</div>
+                <h3>Certificación Oficial</h3>
+                <p>Todos nuestros cursos tienen validez SEP, con reconocimiento oficial en todo el país.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icono">🛠️</div>
+                <h3>Talleres Equipados</h3>
+                <p>Contamos con instalaciones modernas y maquinaria industrial para prácticas reales.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icono">👨‍🏫</div>
+                <h3>Instructores Expertos</h3>
+                <p>Profesionales con amplia experiencia en el sector industrial y docente.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icono">📅</div>
+                <h3>Horarios Flexibles</h3>
+                <p>Opciones matutinas, vespertinas y sabatinas para que te organices.</p>
+            </div>
+        </section>
 
-	<script src="js/script.js"></script>
+        <!-- Testimonios -->
+        <section class="testimonials">
+            <h2>Lo que dicen nuestros egresados</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="https://picsum.photos/id/64/100/100" alt="María González">
+                    <p>"Gracias al curso de electricidad industrial conseguí trabajo en una planta automotriz. Los instructores son muy capacitados."</p>
+                    <h4>María González</h4>
+                    <span>Egresada 2025</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://picsum.photos/id/91/100/100" alt="Juan Pérez">
+                    <p>"El taller de carpintería superó mis expectativas. Ahora tengo mi propio negocio de muebles personalizados."</p>
+                    <h4>Juan Pérez</h4>
+                    <span>Emprendedor</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://picsum.photos/id/65/100/100" alt="Luisa Ramírez">
+                    <p>"Aprendí corte y confección desde cero y en 3 meses ya estaba diseñando mis propias prendas. ¡Muy recomendado!"</p>
+                    <h4>Luisa Ramírez</h4>
+                    <span>Diseñadora de modas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Llamada a la acción contacto / registro -->
+        <section class="cta-contacto">
+            <h2>¿Listo para iniciar tu futuro profesional?</h2>
+            <p>Regístrate ahora o solicita más información. Nuestro equipo te asesorará para elegir el curso que mejor se adapte a tus metas.</p>
+            <a href="registro.html" class="btn" style="margin-right: 15px;">Regístrate</a>
+            <a href="contacto.html" class="btn" style="background-color: #C45824;">Contactar</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CECATI 97 - Tonalá, Jalisco</p>
+    </footer>
 </body>
 </html>
